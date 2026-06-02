@@ -1,0 +1,38 @@
+theme = "dracula"
+
+[editor]
+line-number = "relative" # Números de línea relativos (estilo Vim)
+mouse = true             # Soporte para ratón
+cursorline = true        # Resalta la línea actual
+# El equivalente a smarttab de Vim (hace que Tab al inicio de línea indente)
+smart-tab = { enable = true, supersede-menu = true }
+# Display open buffers as tabs at the top of the screen
+# Options: "never", "always", "multiple"
+bufferline = "always"
+
+[keys.normal]
+# Mapeos para cambiar de buffers (en Helix se llaman "buffers" o "tabs" indistintamente)
+"tab" = ":buffer-next"
+"S-tab" = ":buffer-previous"
+
+# Mover líneas arriba y abajo con Shift+Flechas (Normal Mode)
+"S-up" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+"S-down" = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_after"]
+
+[keys.insert]
+# Mover líneas arriba y abajo con Shift+Flechas (Insert Mode)
+"S-up" = ["normal_mode", "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "insert_mode"]
+"S-down" = ["normal_mode", "extend_to_line_bounds", "delete_selection", "move_line_down", "paste_after", "insert_mode"]
+
+[keys.select]
+# Nota: En Helix, el "Visual Mode" se llama "Select Mode"
+# Copiar al portapapeles del sistema con Ctrl+c
+"C-c" = ":clipboard-yank"
+
+[editor.cursor-shape]
+insert = "bar"           # Cursor de barra en modo inserción
+normal = "block"         # Cursor de bloque en modo normal
+select = "underline"     # Cursor subrayado en modo selección
+
+[editor.lsp]
+display-messages = true  # Muestra mensajes del servidor de lenguaje en la barra de estado
