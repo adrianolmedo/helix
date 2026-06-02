@@ -1,0 +1,3 @@
+[[language]]
+name = "go"
+rulers = [80] # Dibuja la línea vertical en la columna 80
